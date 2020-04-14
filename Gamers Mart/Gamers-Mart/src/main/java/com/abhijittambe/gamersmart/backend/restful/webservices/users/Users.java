@@ -5,7 +5,7 @@ package com.abhijittambe.gamersmart.backend.restful.webservices.users;
 public class Users {
 
 	
-	private int id;
+	private int userId;
 	private String emailId;
 	private String userName;
 	private String password;
@@ -15,9 +15,9 @@ public class Users {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Users(int id, String emailId, String userName, String password, String phoneNumber) {
+	public Users(int userId, String emailId, String userName, String password, String phoneNumber) {
 		super();
-		this.id = id;
+		this.userId = userId;
 		this.emailId = emailId;
 		this.userName = userName;
 		this.password = password;
@@ -26,11 +26,11 @@ public class Users {
 	
 	
 	
-	public int getId() {
-		return id;
+	public int getUserId() {
+		return userId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getEmailId() {
 		return emailId;
