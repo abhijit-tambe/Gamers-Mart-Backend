@@ -9,13 +9,13 @@ public class Users {
 	private String emailId;
 	private String userName;
 	private String password;
-	private Long phoneNumber;
+	private String phoneNumber;
 	
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Users(int id, String emailId, String userName, String password, Long phoneNumber) {
+	public Users(int id, String emailId, String userName, String password, String phoneNumber) {
 		super();
 		this.id = id;
 		this.emailId = emailId;
@@ -50,10 +50,10 @@ public class Users {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	
