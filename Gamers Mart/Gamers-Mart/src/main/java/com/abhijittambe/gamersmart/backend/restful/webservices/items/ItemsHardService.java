@@ -11,7 +11,7 @@ public class ItemsHardService {
 
 	
 	private static List<Items> items = new ArrayList<>();
-	private static int iidNumber=0;
+	private static Long iidNumber=0L;
 	
 	static {
 		items.add(new Items(++iidNumber,"abhijit","Dota 2","Collectible","axe cleaver","bla bla bla",45.5f));
