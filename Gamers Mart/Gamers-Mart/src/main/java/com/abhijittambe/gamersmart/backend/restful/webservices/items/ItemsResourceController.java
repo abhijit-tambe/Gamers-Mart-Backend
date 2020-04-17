@@ -13,15 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins="http://localhost:3000")
 public class ItemsResourceController {
 	
-	@Autowired
-	ItemsHardService iHS;
 	
 	@Autowired
 	ItemsJpaRepository itemRepository;
 	
 	@GetMapping(path="/alllistings")
 	public List<Items> getAllItemListings(){
-		return iHS.findAll();
+		return itemRepository.findAll();
 	}
 
 	@GetMapping(path="/users/{username}/mylistings")
