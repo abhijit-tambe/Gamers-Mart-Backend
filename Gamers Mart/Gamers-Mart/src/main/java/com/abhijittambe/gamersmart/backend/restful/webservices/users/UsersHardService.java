@@ -28,6 +28,7 @@ public class UsersHardService {
 	public Users save(Users user) {
 		if(user.getUserId()==-1||user.getUserId()==0) {
 			user.setUserId(++uidNumber);
+			users.add(user);
 		}else{
 			deleteById(user.getUserId());
 			users.add(user);
