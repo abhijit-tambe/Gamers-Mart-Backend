@@ -25,9 +25,29 @@ public class UsersHardService {
 		return users;
 	}
 	
+	public Users save(Users user) {
+		if(user.getUserId()==-1||user.getUserId()==0) {
+			user.setUserId(++uidNumber);
+		}else{
+			deleteById(user.getUserId());
+			users.add(user);
+		}
+		return user;
+	}
+	
+	public Users findById(long id) {
+		for(Users user:users) {
+			if(user.getUserId()==id)
+				return user;
+		}
+		return null;
+	}
 	
 	
-	
+	public void deleteById(long id) {
+		Users user = findById(id);
+		users.remove(user);
+	}
 	
 	
 }
