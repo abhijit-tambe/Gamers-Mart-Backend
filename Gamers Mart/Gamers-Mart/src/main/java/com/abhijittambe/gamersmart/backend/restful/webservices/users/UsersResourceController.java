@@ -33,7 +33,10 @@ public class UsersResourceController {
 	public ResponseEntity<Void> createUser( @RequestBody Users user){
 		uHS.save(user);
 		System.out.println("user email"+user.getUserId());
-		 return new ResponseEntity<Void>(HttpStatus.OK);
+		if(user.getUserId()!=0||user.getUserId()!=-1)
+		return new ResponseEntity<Void>(HttpStatus.OK);
+		else
+		return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
 	}
 	
 }
