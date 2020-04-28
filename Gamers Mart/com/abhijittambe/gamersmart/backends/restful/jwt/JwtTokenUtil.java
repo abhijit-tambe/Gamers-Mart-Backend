@@ -1,7 +1,7 @@
-package com.abhijittambe.gamersmart.backend.restful.jwt;
+package comd.abhijittambe.gamersmart.backends.restful.jwt;
 
 import java.io.Serializable;
-
+import java.time.Clock;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Clock;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.DefaultClock;

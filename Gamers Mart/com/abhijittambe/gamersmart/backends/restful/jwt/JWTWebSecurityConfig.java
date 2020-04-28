@@ -1,4 +1,4 @@
-package com.abhijittambe.gamersmart.backend.restful.jwt;
+package comd.abhijittambe.gamersmart.backends.restful.jwt;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
