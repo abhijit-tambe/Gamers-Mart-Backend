@@ -3,14 +3,17 @@ package com.abhijittambe.gamersmart.backend.restful.webservices.users;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.abhijittambe.gamersmart.backend.restful.jwt.JwtInMemoryUserDetailsService;
 @Service
 public class UsersHardService {
-
-	
+	@Autowired
+	JwtInMemoryUserDetailsService jwtInMemory;
 	
 	private static List<Users> users = new ArrayList<>();
-	private static int uidNumber=0;
+	private static Long uidNumber=0L;
 	
 	static {
 		users.add(new Users(++uidNumber,"abc@gmail.com","abhijit","tambe","4513265623"));
@@ -29,6 +32,7 @@ public class UsersHardService {
 		if(user.getUserId()==-1||user.getUserId()==0) {
 			user.setUserId(++uidNumber);
 			users.add(user);
+			jwtInMemory.addUser(user.getUserId(), user.getUserName(), user.getPassword());
 		}else{
 			deleteById(user.getUserId());
 			users.add(user);
