@@ -13,22 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class JwtInMemoryUserDetailsService implements UserDetailsService {
 
-  static List<JwtUserDetails> inMemoryUserList = new ArrayList<>();
-
-  static {
-    inMemoryUserList.add(new JwtUserDetails(1L, "in28minutes",
-        "$2a$10$3zHzb.Npv1hfZbLEU5qsdOju/tk2je6W6PnNnY.c1ujWPcZh4PL6e", "ROLE_USER_2"));
-    inMemoryUserList.add(new JwtUserDetails(2L, "abhijit",
-            "$2a$10$dMPldVv0NAVd7u6YRkUOvehnXqr4nzuPIC1dp/8j9Pll29gbh2smy", "ROLE_USER_2"));
-  }
-  //bycrypt https://bcrypt-generator.com/ 
-  // user : pass | abhijit : tambe
-  
+  private List<JwtUserDetails> inMemoryUserList = new ArrayList<>();
   
   public void addUser(Long id ,String username, String password) {
 	  String passEncrypt = new  BCryptPasswordEncoder().encode(password).toString();
-	  inMemoryUserList.add(new JwtUserDetails(id, username, passEncrypt, "ROLE_USER_2"));
-	  
+	  inMemoryUserList.add(new JwtUserDetails(id, username, passEncrypt, "Users"));
   }
 
   @Override
