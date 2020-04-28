@@ -76,7 +76,7 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
         webSecurity
             .ignoring()
             .antMatchers( 
-                authenticationPath,"/user/**","/user/create-account"
+                authenticationPath,"/user/**","/user/create-account","/items/alllistings"
             )
             .antMatchers(HttpMethod.OPTIONS, "/**")
             .and()
