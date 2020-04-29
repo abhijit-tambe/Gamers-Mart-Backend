@@ -2,13 +2,16 @@ package com.abhijittambe.gamersmart.backend.restful.webservices.items;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Items {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name="itemsequence", initialValue=7)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator ="itemsequence")
 	private Long itemId;
 	private String userName;
 	private String gameName;
