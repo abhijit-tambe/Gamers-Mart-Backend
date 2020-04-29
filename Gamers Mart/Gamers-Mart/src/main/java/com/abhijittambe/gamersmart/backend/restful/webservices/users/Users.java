@@ -10,8 +10,8 @@ import javax.persistence.SequenceGenerator;
 public class Users {
 
 	@Id
-	@SequenceGenerator(name="mysequence", initialValue=5)
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="mysequence")
+	@SequenceGenerator(name="usersequence", initialValue=5)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="usersequence")
 	private Long userId;
 	private String emailId;
 	private String userName;
