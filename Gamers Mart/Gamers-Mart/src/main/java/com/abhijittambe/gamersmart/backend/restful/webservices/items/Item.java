@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Items {
+public class Item {
 
 	@Id
 	@SequenceGenerator(name="itemsequence", initialValue=7)
@@ -21,13 +21,13 @@ public class Items {
 	private float price;
 	
 
-	public Items() {
+	public Item() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public Items(Long itemId, String userName, String gameName, String itemType, String itemName, String description,
+	public Item(Long itemId, String userName, String gameName, String itemType, String itemName, String description,
 			float price) {
 		super();
 		this.itemId = itemId;
@@ -149,7 +149,7 @@ public class Items {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Items other = (Items) obj;
+		Item other = (Item) obj;
 		if (description == null) {
 			if (other.description != null)
 				return false;

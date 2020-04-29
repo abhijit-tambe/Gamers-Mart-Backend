@@ -27,8 +27,8 @@ public class UsersResourceController {
 	
 	@GetMapping(path="/")
 	public ResponseEntity<Void> initialise() {
-		List<Users> users= userJpaRepository.findAll();
-			for(Users u:users) {
+		List<User> user= userJpaRepository.findAll();
+			for(User u:user) {
 				jwtInMemory.addUser(u.getUserId(),u.getUserName(),u.getPassword());
 			}
 			System.out.println("initialization complete");
@@ -36,13 +36,13 @@ public class UsersResourceController {
 	}
 	
 	@GetMapping(path="/user/allusers")
-	public List<Users> GetAllUsers() {
+	public List<User> GetAllUsers() {
 		return userJpaRepository.findAll();
 	}
 	
 	@PostMapping(path="/user/create-account")
-	public ResponseEntity<Void> createUser( @RequestBody Users user){
-		Users userCreated= userJpaRepository.save(user);
+	public ResponseEntity<Void> createUser( @RequestBody User user){
+		User userCreated= userJpaRepository.save(user);
 		jwtInMemory.addUser(userCreated.getUserId(),userCreated.getUserName(),userCreated.getPassword());
 		if(userCreated.getUserId()!=0||user.getUserId()!=-1)
 		return new ResponseEntity<Void>(HttpStatus.OK);

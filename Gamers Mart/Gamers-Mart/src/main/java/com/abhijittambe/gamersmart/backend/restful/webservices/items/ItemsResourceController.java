@@ -23,33 +23,33 @@ public class ItemsResourceController {
 	ItemsJpaRepository itemRepository;
 	
 	@GetMapping(path="/items/alllistings")
-	public List<Items> getAllItemListings(){
+	public List<Item> getAllItemListings(){
 		return itemRepository.findAll();
 	}
 	
 
 	@GetMapping(path="/items/{username}/mylistings")
-	public List<Items> getUserItemListings(@PathVariable String username){
+	public List<Item> getUserItemListings(@PathVariable String username){
 		return itemRepository.findByUserName(username);
 	}
 	
 	@DeleteMapping(path="/items/{username}/delete/{itemid}")
 	public ResponseEntity<Void> deleteUserItem(@PathVariable String username, @PathVariable Long itemid){
-		Items deleteItem = itemRepository.getOne(itemid);
+		Item deleteItem = itemRepository.getOne(itemid);
 		itemRepository.delete(deleteItem);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
 	@PostMapping(path="/items/{username}/add")
-	public ResponseEntity<Void> addUserItem(@PathVariable String username,@RequestBody Items item){
+	public ResponseEntity<Void> addUserItem(@PathVariable String username,@RequestBody Item item){
 		item.setUserName(username);
 		itemRepository.save(item);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
 	@PutMapping(path="/items/{username}/update/{itemid}")
-		public ResponseEntity<Void> updateUserItem(@PathVariable String username, @PathVariable Long itemid, @RequestBody Items item){
-			Items updateItem = itemRepository.getOne(itemid);
+		public ResponseEntity<Void> updateUserItem(@PathVariable String username, @PathVariable Long itemid, @RequestBody Item item){
+			Item updateItem = itemRepository.getOne(itemid);
 			updateItem.setDescription(item.getDescription());
 			updateItem.setPrice(item.getPrice());
 			itemRepository.save(updateItem);
@@ -58,7 +58,7 @@ public class ItemsResourceController {
 	
 	@GetMapping(path="/items/{username}/buy/{itemid}")
 	public ResponseEntity<Void> buyItems(@PathVariable String username, @PathVariable Long itemid){
-		Items boughtItem = itemRepository.getOne(itemid);
+		Item boughtItem = itemRepository.getOne(itemid);
 		boughtItem.setUserName(username);
 		itemRepository.save(boughtItem);
 		return new ResponseEntity<Void>(HttpStatus.OK);

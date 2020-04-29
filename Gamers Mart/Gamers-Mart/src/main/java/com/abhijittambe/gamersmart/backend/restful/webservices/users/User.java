@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Users {
+public class User {
 
 	@Id
 	@SequenceGenerator(name="usersequence", initialValue=5)
@@ -18,12 +18,12 @@ public class Users {
 	private String password;
 	private String phoneNumber;
 	
-	public Users() {
+	public User() {
 		super();
 		
 		// TODO Auto-generated constructor stub
 	}
-	public Users(Long userId, String emailId, String userName, String password, String phoneNumber) {
+	public User(Long userId, String emailId, String userName, String password, String phoneNumber) {
 		super();
 		this.userId = userId;
 		this.emailId = emailId;
@@ -85,7 +85,7 @@ public class Users {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Users other = (Users) obj;
+		User other = (User) obj;
 		if (emailId == null) {
 			if (other.emailId != null)
 				return false;
