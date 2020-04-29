@@ -1,4 +1,4 @@
-package com.abhijittambe.gamersmart.backend.restful.webservices.users;
+package com.abhijittambe.gamersmart.backend.restful.webservices.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.abhijittambe.gamersmart.backend.restful.webservices.items;
+package com.abhijittambe.gamersmart.backend.restful.webservices.item;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.abhijittambe.gamersmart.backend.restful.webservices.items;
+package com.abhijittambe.gamersmart.backend.restful.webservices.item;
 
 import java.util.List;
 
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins="http://localhost:3000")
-public class ItemsResourceController {
+public class ItemResourceController {
 	
 	
 	@Autowired
-	ItemsJpaRepository itemRepository;
+	ItemJpaRepository itemRepository;
 	
 	@GetMapping(path="/items/alllistings")
 	public List<Item> getAllItemListings(){
