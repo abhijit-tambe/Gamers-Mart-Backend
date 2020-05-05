@@ -42,7 +42,7 @@ public class ItemResourceController {
 	
 	@PostMapping(path="/items/{username}/add")
 	public ResponseEntity<Void> addUserItem(@PathVariable String username,@RequestBody Item item){
-		item.setUserName(username);
+//		item.setUserName(username);
 		itemRepository.save(item);
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
